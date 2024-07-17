@@ -60,7 +60,7 @@ function addGamesToPage(games) {
 }
 
 // call the function we just defined using the correct variable
-addGamesToPage(GAMES_JSON)
+
 // later, we'll call this function using a different list of games
 
 
@@ -89,7 +89,7 @@ const challenge4b = GAMES_JSON.reduce((acc, pledge) => {
 }, 0);
 
 // set inner HTML using template literal
-raisedCard.innerHTML = `${challenge4b.toLocaleString('en-us')}`;
+raisedCard.innerHTML = `$${challenge4b.toLocaleString('en-us')}`;
 
 // grab number of games card and set its inner HTML
 const gamesCard = document.getElementById("num-games");
@@ -237,3 +237,5 @@ function deletetextBox(){
         deleteChildElements(searchContainer);
     }
 }
+
+filterFundedOnly()
