@@ -223,6 +223,8 @@ function searchForGame() {
     if (!textBox) {
         textBox = document.createElement("input")
         textBox.setAttribute("id", "textBox")
+        textBox.setAttribute("placeholder", "Search here...");
+
         searchContainer.appendChild(textBox)
     }
 
