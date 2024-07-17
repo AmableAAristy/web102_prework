@@ -107,9 +107,7 @@ gamesCard.innerHTML = `${challenge4c}`;
 // show only games that do not yet have enough funding
 function filterUnfundedOnly() {
     deleteChildElements(gamesContainer);
-    if (textBox){
-        deleteChildElements(searchContainer) 
-    }
+    deletetextBox()
      
     // use filter() to get a list of games that have not yet met their goal
     const challenge5 = GAMES_JSON.filter((game) => {
@@ -128,9 +126,7 @@ function filterUnfundedOnly() {
 // show only games that are fully funded
 function filterFundedOnly() {
     deleteChildElements(gamesContainer);
-    if (textBox){
-        deleteChildElements(searchContainer) 
-    }
+    deletetextBox()
     // use filter() to get a list of games that have met or exceeded their goal
     const challenge5b = GAMES_JSON.filter((game) => {
         return game.pledged > game.goal;
@@ -145,9 +141,7 @@ function filterFundedOnly() {
 // show all games
 function showAllGames() {
     deleteChildElements(gamesContainer);
-    if (textBox){
-        deleteChildElements(searchContainer) 
-    }
+    deletetextBox()
     // add all games from the JSON data to the DOM
     addGamesToPage(GAMES_JSON);
 }
@@ -237,3 +231,9 @@ function searchForGame() {
     })
 }
 searchBtn.addEventListener("click", searchForGame)
+
+function deletetextBox(){
+    if (typeof textBox !== 'undefined' && textBox) {
+        deleteChildElements(searchContainer);
+    }
+}
